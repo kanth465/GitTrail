@@ -11,7 +11,7 @@ namespace GitTrailConsole
         static void Main(string[] args)
         {
 
-            Console.WriteLine(ShowName("Ramakanth Kota"));
+            Console.WriteLine(ShowName("Ramakanth"));
         }
         public static string ShowName(string Name)
         {
