@@ -12,11 +12,25 @@ namespace GitTrailConsole
         {
 
             //Console.WriteLine(ShowName("Ramakanth Kota"));
-            singleton fromEmp = singleton.GetInstance;
-            fromEmp.printdetails("From Emp");
+
+            Parallel.Invoke(
+                () => PrintEmpDetails(),
+                () => PrintStudentDetails()
+                );           
+                
+            Console.ReadLine();
+        }
+
+        private static void PrintStudentDetails()
+        {
             singleton fromStudent = singleton.GetInstance;
             fromStudent.printdetails("From Student");
-            Console.ReadLine();
+        }
+
+        private static void PrintEmpDetails()
+        {
+            singleton fromEmp = singleton.GetInstance;
+            fromEmp.printdetails("From Emp");
         }
         public static string ShowName(string Name)
         {

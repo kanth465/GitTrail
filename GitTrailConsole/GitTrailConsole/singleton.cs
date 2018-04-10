@@ -9,13 +9,20 @@ namespace GitTrailConsole
     public sealed class singleton
     {
         private static int counter = 0;
+        private static readonly object obj = new object();
         private static singleton Instance = null;
         public static singleton GetInstance
         {
             get
             {
                 if (Instance == null)
-                    Instance = new singleton();
+                {
+                    lock (obj)
+                    {
+                        if (Instance == null)
+                            Instance = new singleton();
+                    }
+                }
                 return Instance;
             }
         }
