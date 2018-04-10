@@ -11,7 +11,12 @@ namespace GitTrailConsole
         static void Main(string[] args)
         {
 
-            Console.WriteLine(ShowName("Ramakanth Kota"));
+            //Console.WriteLine(ShowName("Ramakanth Kota"));
+            singleton fromEmp = singleton.GetInstance;
+            fromEmp.printdetails("From Emp");
+            singleton fromStudent = singleton.GetInstance;
+            fromStudent.printdetails("From Student");
+            Console.ReadLine();
         }
         public static string ShowName(string Name)
         {
