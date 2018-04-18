@@ -23,13 +23,15 @@ namespace GitTrailConsole
 
         private static void PrintStudentDetails()
         {
-            singleton fromStudent = singleton.GetInstance;
+            //singleton fromStudent = singleton.GetInstance;
+            LazyVsEagarINit fromStudent = LazyVsEagarINit.GetInstance;
             fromStudent.printdetails("From Student");
         }
 
         private static void PrintEmpDetails()
         {
-            singleton fromEmp = singleton.GetInstance;
+            //singleton fromEmp = singleton.GetInstance;
+            LazyVsEagarINit fromEmp = LazyVsEagarINit.GetInstance;
             fromEmp.printdetails("From Emp");
         }
         public static string ShowName(string Name)
